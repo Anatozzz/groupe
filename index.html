@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Groupe [Nom] – Contractant général à Annecy</title>
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groupe [Nom] – Un seul contact, tous vos services</title>
+  <meta name="description" content="Groupe [Nom] accompagne les entreprises à Annecy avec un interlocuteur unique pour nettoyage, maintenance, petits travaux, logistique, services aux salariés.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="main-header">
-    <div class="container">
-      <h1>Un seul contact, tous vos services</h1>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Un seul contact,<br>tous vos services</h1>
       <p class="cta">Gagnez du temps. On s’occupe du reste.</p>
+      <a href="#contact" class="btn-primary">Je souhaite être rappelé</a>
     </div>
   </header>
 
   <main>
-    <section class="about-section container">
-      <h2>Groupe [Nom à compléter]</h2>
+    <section id="about" class="section">
+      <h2>Qui sommes-nous ?</h2>
       <p>
-        Nous sommes le partenaire de confiance des entreprises (TPE, PME, indépendants) à Annecy et sa région. Notre mission : simplifier votre quotidien en vous proposant un interlocuteur unique pour tous vos besoins. Fini les recherches interminables de prestataires, nous nous occupons de tout.
+        Groupe [Nom] apporte aux TPE, PME, indépendants d’Annecy et sa région un interlocuteur unique pour tous leurs services : nettoyage, entretien, petits travaux, maintenance, logistique légère, services aux salariés. Qu’il s’agisse d’une prestation ponctuelle ou régulière, nous sommes votre partenaire de confiance.
       </p>
     </section>
 
-    <section class="services-section container">
+    <section id="services" class="section bg-light">
       <h2>Nos services</h2>
       <div class="services-grid">
-        <div class="service-block">Nettoyage</div>
-        <div class="service-block">Entretien</div>
-        <div class="service-block">Maintenance</div>
-        <div class="service-block">Petits travaux</div>
-        <div class="service-block">Services aux salariés</div>
-        <div class="service-block">Logistique légère</div>
-        <div class="service-block">Prestations ponctuelles ou récurrentes</div>
+        <div class="service-card">
+          <div class="icon">🧹</div>
+          <h3>Nettoyage & Entretien</h3>
+          <p>Espaces impeccables en continu ou à la demande.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🔧</div>
+          <h3>Maintenance & Petits travaux</h3>
+          <p>Réparations rapides et interventions sur site.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">👥</div>
+          <h3>Services aux salariés</h3>
+          <p>Accueil, logistique interne, assistance quotidienne.</p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🚚</div>
+          <h3>Logistique légère</h3>
+          <p>Transport et gestion de matériel léger.</p>
+        </div>
       </div>
     </section>
 
-    <section class="zone-section container">
+    <section id="region" class="section">
       <h2>Zone d’intervention</h2>
-      <p>
-        Annecy et sa région
-      </p>
+      <p>Annecy et sa région (Rumilly, Veyrier, Cran‑Gevrier, Sevrier, etc.).</p>
     </section>
 
-    <section class="contact-section container">
-      <h2>Contactez-nous</h2>
-      <form class="contact-form">
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" required>
-
+    <section id="contact" class="section bg-light">
+      <h2>Contact rapide</h2>
+      <form id="quick-contact-form" class="form">
+        <label for="name">Nom complet</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
         <label for="need">Votre besoin</label>
-        <input type="text" id="need" name="need" required>
-
+        <input type="text" id="need" name="need" placeholder="Nettoyage, maintenance..." required>
         <label for="phone">Téléphone</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <button type="submit" class="accent-btn">Être rappelé</button>
+        <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required>
+        <button type="submit" class="btn-primary">Être rappelé</button>
+        <p id="form-confirm" class="form-confirm">Merci, nous vous contactons dès que possible.</p>
       </form>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <small>&copy; 2025 Groupe [Nom à compléter] – Contractant général, Annecy</small>
-    </div>
+    <p>&copy; 2025 Groupe [Nom] – Annecy & région</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
