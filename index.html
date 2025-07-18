@@ -27,38 +27,57 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
             scroll-behavior: smooth;
         }
-        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 400 !important;
+            letter-spacing: 0.02em;
+        }
+        h1 {
+            font-size: 2.3rem !important;
+        }
+        h2 {
+            font-size: 1.7rem !important;
+        }
+        h3 {
+            font-size: 1.2rem !important;
+        }
+        p, label, input, select, button, a {
+            font-weight: 300 !important;
+        }
+        .service-card {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+            border-radius: 16px;
+            border-top-width: 2px !important;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+        }
+        .burgundy-btn, .bg-burgundy {
+            font-weight: 400 !important;
+            border-radius: 9999px !important;
+        }
         .hero-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+            background: linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)), 
                         url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
         }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .burgundy-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .burgundy-btn:hover {
-            background-color: #600018;
-            transform: translateY(-2px);
+        .footer, footer {
+            font-weight: 300 !important;
         }
     </style>
 </head>
 <body class="bg-white text-gray-800">
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <div class="text-2xl font-bold">
+                    <div class="text-xl font-light">
                         <span class="text-burgundy">Groupe</span> 
                         <span class="text-gold">[Nom]</span>
                     </div>
@@ -70,20 +89,20 @@
                     <a href="#contact" class="hover:text-gold transition">Contact</a>
                 </nav>
                 <button class="md:hidden focus:outline-none">
-                    <i class="fas fa-bars text-2xl text-burgundy"></i>
+                    <i class="fas fa-bars text-xl text-burgundy"></i>
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section py-20 md:py-32">
+    <section class="hero-section py-16 md:py-24">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            <h1 class="font-light mb-6">
                 <span class="text-burgundy">Un seul contact.</span> 
                 <span class="text-gold">Tous vos services.</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
                 Votre partenaire unique pour simplifier le quotidien de votre entreprise
             </p>
             <a href="#contact" class="bg-burgundy text-white px-8 py-3 rounded-full burgundy-btn inline-block">
@@ -93,11 +112,11 @@
     </section>
 
     <!-- Mission Section -->
-    <section id="mission" class="py-20 bg-lightgold">
+    <section id="mission" class="py-16 bg-lightgold">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-6 text-burgundy">Notre mission</h2>
-                <p class="text-lg mb-8">
+                <h2 class="font-light mb-6 text-burgundy">Notre mission</h2>
+                <p class="mb-8">
                     Chez Groupe [Nom], nous croyons que les petites entreprises méritent la même qualité de service que les grandes, sans la complexité. 
                     Notre mission est de simplifier votre quotidien en coordonnant tous les prestataires nécessaires à votre activité, 
                     vous permettant ainsi de vous concentrer sur l'essentiel : développer votre entreprise.
@@ -108,71 +127,71 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
+    <section id="services" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 text-center text-burgundy">Nos services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <h2 class="font-light mb-12 text-center text-burgundy">Nos services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
-                    <div class="text-4xl text-gold mb-4">
+                <div class="service-card bg-white p-7 rounded-lg shadow-sm border-t-2 border-gold">
+                    <div class="text-3xl text-gold mb-3">
                         <i class="fas fa-broom"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-burgundy">Nettoyage</h3>
+                    <h3 class="font-light mb-2 text-burgundy">Nettoyage</h3>
                     <p class="text-gray-600">
                         Services de nettoyage réguliers ou ponctuels pour maintenir vos locaux professionnels impeccables.
                     </p>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
-                    <div class="text-4xl text-gold mb-4">
+                <div class="service-card bg-white p-7 rounded-lg shadow-sm border-t-2 border-gold">
+                    <div class="text-3xl text-gold mb-3">
                         <i class="fas fa-tools"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-burgundy">Petits travaux</h3>
+                    <h3 class="font-light mb-2 text-burgundy">Petits travaux</h3>
                     <p class="text-gray-600">
                         Réparation, installation et aménagement de vos espaces de travail par des professionnels qualifiés.
                     </p>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
-                    <div class="text-4xl text-gold mb-4">
+                <div class="service-card bg-white p-7 rounded-lg shadow-sm border-t-2 border-gold">
+                    <div class="text-3xl text-gold mb-3">
                         <i class="fas fa-wrench"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-burgundy">Maintenance</h3>
+                    <h3 class="font-light mb-2 text-burgundy">Maintenance</h3>
                     <p class="text-gray-600">
                         Maintenance préventive et corrective pour tous vos équipements et installations techniques.
                     </p>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
-                    <div class="text-4xl text-gold mb-4">
+                <div class="service-card bg-white p-7 rounded-lg shadow-sm border-t-2 border-gold">
+                    <div class="text-3xl text-gold mb-3">
                         <i class="fas fa-truck"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-burgundy">Logistique légère</h3>
+                    <h3 class="font-light mb-2 text-burgundy">Logistique légère</h3>
                     <p class="text-gray-600">
                         Solutions de transport, livraison et gestion des stocks adaptées aux besoins des petites entreprises.
                     </p>
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
-                    <div class="text-4xl text-gold mb-4">
+                <div class="service-card bg-white p-7 rounded-lg shadow-sm border-t-2 border-gold">
+                    <div class="text-3xl text-gold mb-3">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-burgundy">Services aux salariés</h3>
+                    <h3 class="font-light mb-2 text-burgundy">Services aux salariés</h3>
                     <p class="text-gray-600">
                         Prestations pour améliorer le bien-être de vos équipes : restauration, conciergerie, etc.
                     </p>
                 </div>
                 
                 <!-- Service 6 -->
-                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
-                    <div class="text-4xl text-gold mb-4">
+                <div class="service-card bg-white p-7 rounded-lg shadow-sm border-t-2 border-gold">
+                    <div class="text-3xl text-gold mb-3">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-burgundy">Prestations ponctuelles</h3>
+                    <h3 class="font-light mb-2 text-burgundy">Prestations ponctuelles</h3>
                     <p class="text-gray-600">
                         Besoin spécifique ? Nous trouvons le bon prestataire pour répondre à votre demande particulière.
                     </p>
@@ -182,11 +201,11 @@
     </section>
 
     <!-- Zone Section -->
-    <section id="zone" class="py-20 bg-lightgold">
+    <section id="zone" class="py-16 bg-lightgold">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-6 text-burgundy">Zone d'intervention</h2>
-                <p class="text-lg mb-8">
+                <h2 class="font-light mb-6 text-burgundy">Zone d'intervention</h2>
+                <p class="mb-8">
                     Nous intervenons principalement sur Annecy et sa région, avec une parfaite connaissance du territoire 
                     et un réseau de prestataires locaux de confiance.
                 </p>
@@ -200,26 +219,26 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                 <div class="md:flex">
                     <div class="w-full p-8">
-                        <h2 class="text-3xl font-bold mb-6 text-center text-burgundy">Contactez-nous</h2>
+                        <h2 class="font-light mb-6 text-center text-burgundy">Contactez-nous</h2>
                         <p class="text-center mb-8 text-gray-600">
                             Un seul numéro pour tous vos besoins. Nous vous rappelons sous 24h.
                         </p>
                         <form class="space-y-6">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700">Votre nom</label>
+                                <label for="name" class="block text-sm font-light text-gray-700">Votre nom</label>
                                 <input type="text" id="name" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
                             </div>
                             <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700">Votre téléphone</label>
+                                <label for="phone" class="block text-sm font-light text-gray-700">Votre téléphone</label>
                                 <input type="tel" id="phone" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
                             </div>
                             <div>
-                                <label for="need" class="block text-sm font-medium text-gray-700">Votre besoin</label>
+                                <label for="need" class="block text-sm font-light text-gray-700">Votre besoin</label>
                                 <select id="need" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
                                     <option>Sélectionnez un service</option>
                                     <option>Nettoyage</option>
@@ -244,11 +263,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-burgundy text-white py-12">
+    <footer class="bg-burgundy text-white py-10">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <div class="text-2xl font-bold">
+                    <div class="text-xl font-light">
                         <span class="text-white">Groupe</span> 
                         <span class="text-gold">[Nom]</span>
                     </div>
