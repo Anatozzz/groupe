@@ -210,49 +210,55 @@
 </section>
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="md:flex">
-                    <div class="w-full p-8">
-                        <h2 class="font-light mb-6 text-center text-burgundy">Contactez-nous</h2>
-                        <p class="text-center mb-8 text-gray-600">
-                            Un seul numéro pour tous vos besoins. Nous vous rappelons sous 24h.
-                        </p>
-                        <form class="space-y-6">
-                            <div>
-                                <label for="name" class="block text-sm font-light text-gray-700">Votre nom</label>
-                                <input type="text" id="name" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-light text-gray-700">Votre téléphone</label>
-                                <input type="tel" id="phone" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
-                            </div>
-                            <div>
-                                <label for="need" class="block text-sm font-light text-gray-700">Votre besoin</label>
-                                <select id="need" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
-                                    <option>Sélectionnez un service</option>
-                                    <option>Nettoyage</option>
-                                    <option>Petits travaux</option>
-                                    <option>Maintenance</option>
-                                    <option>Logistique légère</option>
-                                    <option>Services aux salariés</option>
-                                    <option>Prestation ponctuelle</option>
-                                    <option>Autre demande</option>
-                                </select>
-                            </div>
-                            <div class="pt-4">
-                                <button type="submit" class="w-full bg-burgundy text-white py-3 px-4 rounded-full burgundy-btn">
-                                     Être rappelé
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+   <!-- Contact Section -->
+<section id="contact" class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="md:flex">
+        <div class="w-full p-8">
+          <h2 class="text-3xl font-light mb-6 text-center text-burgundy">Contactez-nous</h2>
+          <p class="text-center mb-8 text-gray-600">
+            Un seul numéro pour tous vos besoins. Nous vous rappelons sous 24h.
+          </p>
+          <form class="space-y-6" id="contactForm">
+            <div>
+              <label for="name" class="block text-sm font-light text-gray-700">Votre nom</label>
+              <input type="text" id="name" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
             </div>
+            <div>
+              <label for="phone" class="block text-sm font-light text-gray-700">Votre téléphone</label>
+              <input type="tel" id="phone" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
+            </div>
+            <div>
+              <label for="need" class="block text-sm font-light text-gray-700">Votre besoin</label>
+              <select id="need" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
+                <option>Sélectionnez un service</option>
+                <option>Nettoyage</option>
+                <option>Petits travaux</option>
+                <option>Maintenance</option>
+                <option>Logistique légère</option>
+                <option>Services aux salariés</option>
+                <option>Prestation ponctuelle</option>
+                <option>Autre demande</option>
+              </select>
+            </div>
+            <div class="pt-4">
+              <button type="submit" class="w-full bg-burgundy text-white py-3 px-4 rounded-full burgundy-btn transition hover:opacity-90">
+                Être rappelé
+              </button>
+            </div>
+          </form>
+
+          <!-- Message de confirmation -->
+          <div id="formMessage" class="hidden mt-6 text-center text-green-700 font-medium transition-opacity duration-500 opacity-0">
+            Merci pour votre demande. Nous vous rappellerons dans les plus brefs délais.
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-burgundy text-white py-10">
@@ -321,15 +327,32 @@
             });
         });
 
-        // Form submission
-        const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Merci pour votre demande. Nous vous rappellerons dans les plus brefs délais.');
-                form.reset();
-            });
-        }
+       // Form submission
+const form = document.querySelector('form');
+const message = document.getElementById('formMessage');
+
+if (form && message) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Affiche le message avec animation
+    message.classList.remove('hidden');
+    message.classList.add('opacity-100');
+
+    // Réinitialise le formulaire
+    form.reset();
+
+    // Masquer le message après 5 secondes (facultatif)
+    setTimeout(() => {
+      message.classList.remove('opacity-100');
+      message.classList.add('opacity-0');
+      setTimeout(() => {
+        message.classList.add('hidden');
+      }, 500); // délai pour finir la transition
+    }, 5000);
+  });
+}
+
     </script>
 </body>
 </html>
