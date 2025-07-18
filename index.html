@@ -1,79 +1,208 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF‑8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Groupe [Nom] – Un seul contact, tous vos services</title>
-  <meta name="description" content="Groupe [Nom] accompagne les entreprises à Annecy avec un interlocuteur unique pour nettoyage, maintenance, petits travaux, logistique, services aux salariés.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Nettoyage, entretien, maintenance, petits travaux, logistique légère et services aux salariés – à Annecy et région. Un seul contact pour tout.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #f8f9fa;
+      --white: #fff;
+      --text: #333;
+      --accent: #0077cc;
+      --accent-hover: #005fa3;
+      --radius: 8px;
+      --transition: 0.3s ease;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--white);
+      text-align: center;
+      padding: 120px 20px;
+    }
+    header h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 20px;
+    }
+    header .cta {
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      transition: background var(--transition);
+    }
+    .btn:hover { background: var(--accent-hover); }
+
+    section {
+      padding: 60px 20px;
+      background: var(--white);
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 30px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .service {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+    .service .icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .form label {
+      margin-top: 20px;
+      font-weight: 600;
+    }
+    .form input {
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      font-size: 1rem;
+    }
+    .form input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 6px rgba(0,119,204,0.3);
+    }
+    .form-confirm {
+      display: none;
+      color: green;
+      margin-top: 20px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media(max-width:600px) {
+      header { padding: 80px 20px; }
+      header h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Un seul contact,<br>tous vos services</h1>
-      <p class="cta">Gagnez du temps. On s’occupe du reste.</p>
-      <a href="#contact" class="btn-primary">Je souhaite être rappelé</a>
-    </div>
+
+  <header>
+    <h1>Un seul contact,<br>tous vos services</h1>
+    <p class="cta">Gagnez du temps. On s’occupe du reste.</p>
+    <a href="#contact" class="btn">Je souhaite être rappelé</a>
   </header>
 
-  <main>
-    <section id="about" class="section">
-      <h2>Qui sommes-nous ?</h2>
-      <p>
-        Groupe [Nom] apporte aux TPE, PME, indépendants d’Annecy et sa région un interlocuteur unique pour tous leurs services : nettoyage, entretien, petits travaux, maintenance, logistique légère, services aux salariés. Qu’il s’agisse d’une prestation ponctuelle ou régulière, nous sommes votre partenaire de confiance.
-      </p>
-    </section>
+  <section id="about">
+    <h2 class="section-title">Qui sommes-nous ?</h2>
+    <p>
+      Groupe [Nom] aide les entreprises, indépendants, TPE/PME à simplifier leur quotidien avec un seul interlocuteur pour tous leurs services de terrain : nettoyage, entretien, maintenance, petits travaux, logistique, services aux salariés. Interventions ponctuelles ou régulières – avec fiabilité, clarté et professionnalisme.
+    </p>
+  </section>
 
-    <section id="services" class="section bg-light">
-      <h2>Nos services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="icon">🧹</div>
-          <h3>Nettoyage & Entretien</h3>
-          <p>Espaces impeccables en continu ou à la demande.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">🔧</div>
-          <h3>Maintenance & Petits travaux</h3>
-          <p>Réparations rapides et interventions sur site.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">👥</div>
-          <h3>Services aux salariés</h3>
-          <p>Accueil, logistique interne, assistance quotidienne.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon">🚚</div>
-          <h3>Logistique légère</h3>
-          <p>Transport et gestion de matériel léger.</p>
-        </div>
+  <section id="services">
+    <h2 class="section-title">Nos services</h2>
+    <div class="services">
+      <div class="service">
+        <div class="icon">🧹</div>
+        <h3>Nettoyage & Entretien</h3>
+        <p>Locaux professionnels propres, régulièrement ou sur demande.</p>
       </div>
-    </section>
+      <div class="service">
+        <div class="icon">🔧</div>
+        <h3>Maintenance & Petits travaux</h3>
+        <p>Réparations courantes, maintenance de proximité, sur site.</p>
+      </div>
+      <div class="service">
+        <div class="icon">👥</div>
+        <h3>Services aux salariés</h3>
+        <p>Assistance interne, logistique RH, accueil ou tâches variées.</p>
+      </div>
+      <div class="service">
+        <div class="icon">🚚</div>
+        <h3>Logistique légère</h3>
+        <p>Manutention, transport et missions de logistique simple.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="region" class="section">
-      <h2>Zone d’intervention</h2>
-      <p>Annecy et sa région (Rumilly, Veyrier, Cran‑Gevrier, Sevrier, etc.).</p>
-    </section>
+  <section id="region">
+    <h2 class="section-title">Zone d’intervention</h2>
+    <p>
+      Basé à Annecy, nous intervenons dans toute la région annécienne : Rumilly, Sevrier, Veyrier, Cran-Gevrier, Poisy, etc.
+    </p>
+  </section>
 
-    <section id="contact" class="section bg-light">
-      <h2>Contact rapide</h2>
-      <form id="quick-contact-form" class="form">
-        <label for="name">Nom complet</label>
-        <input type="text" id="name" name="name" placeholder="Votre nom" required>
-        <label for="need">Votre besoin</label>
-        <input type="text" id="need" name="need" placeholder="Nettoyage, maintenance..." required>
-        <label for="phone">Téléphone</label>
-        <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required>
-        <button type="submit" class="btn-primary">Être rappelé</button>
-        <p id="form-confirm" class="form-confirm">Merci, nous vous contactons dès que possible.</p>
-      </form>
-    </section>
-  </main>
+  <section id="contact">
+    <h2 class="section-title">Contact rapide</h2>
+    <form id="quick-contact-form" class="form">
+      <label for="name">Nom</label>
+      <input type="text" id="name" required />
+      <label for="need">Votre besoin</label>
+      <input type="text" id="need" required />
+      <label for="phone">Téléphone</label>
+      <input type="tel" id="phone" required />
+      <button type="submit" class="btn" style="margin-top:20px;">Être rappelé</button>
+      <p id="form-confirm" class="form-confirm">Merci, nous vous recontactons très vite.</p>
+    </form>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Groupe [Nom] – Annecy & région</p>
+    <p>&copy; 2025 Groupe [Nom] – Votre partenaire de confiance à Annecy</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('quick-contact-form');
+    const confirm = document.getElementById('form-confirm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      confirm.style.display = 'block';
+      setTimeout(() => {
+        confirm.style.display = 'none';
+        form.reset();
+      }, 3000);
+    });
+  </script>
+
 </body>
 </html>
