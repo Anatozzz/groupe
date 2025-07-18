@@ -1,224 +1,324 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Groupe [Nom] – Contractant général à Annecy</title>
-  <style>
-    :root {
-      --blanc: #fff;
-      --gris-clair: #f7f7f7;
-      --doré: #CBA135;
-      --doré-foncé: #A88C2E;
-      --texte: #333;
-    }
-    body {
-      background: var(--blanc);
-      color: var(--texte);
-      margin: 0;
-      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    }
-    .container {
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
-    .main-header {
-      background: var(--blanc);
-      border-bottom: 2px solid var(--doré);
-      text-align: center;
-      padding: 3rem 0 2rem 0;
-    }
-    .main-header h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--doré-foncé);
-    }
-    .cta {
-      font-size: 1.3rem;
-      margin-top: 0.5rem;
-      color: var(--doré);
-      font-weight: 600;
-    }
-    h2 {
-      color: var(--doré-foncé);
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-    .about-section, .services-section, .zone-section, .contact-section {
-      margin-top: 2rem;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .service-block {
-      background: var(--gris-clair);
-      border: 1px solid var(--doré);
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-      font-weight: 500;
-      color: var(--texte);
-      box-shadow: 0 2px 8px rgba(200, 161, 53, 0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .service-block:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 6px 18px rgba(200,161,53,0.14);
-      background: var(--blanc);
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .contact-form label {
-      font-size: 1rem;
-      margin-bottom: 0.2rem;
-      color: var(--doré-foncé);
-    }
-    .contact-form input {
-      padding: 0.7rem;
-      border: 1px solid var(--doré);
-      border-radius: 5px;
-      font-size: 1rem;
-      background: var(--blanc);
-    }
-    .accent-btn {
-      padding: 0.8rem;
-      background: var(--doré);
-      color: var(--blanc);
-      font-weight: 600;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-    .accent-btn:hover,
-    .accent-btn:focus {
-      background: var(--doré-foncé);
-    }
-    .confirmation {
-      background: var(--doré);
-      color: var(--blanc);
-      border-radius: 5px;
-      padding: 1rem;
-      text-align: center;
-      margin-top: 1.2rem;
-      display: none;
-      font-weight: 600;
-      animation: fadein .7s;
-    }
-    @keyframes fadein {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    footer {
-      margin-top: 3rem;
-      background: var(--blanc);
-      border-top: 1px solid var(--doré);
-      text-align: center;
-      padding: 1rem 0;
-      color: var(--doré-foncé);
-      font-size: 0.95rem;
-    }
-    @media (max-width: 600px) {
-      html { font-size: 16px; }
-      .container { padding: 1rem; }
-      .services-grid { grid-template-columns: 1fr; gap: 0.8rem; }
-      .main-header h1 { font-size: 1.4rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupe [Nom] - Un seul contact pour tous vos services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        burgundy: '#800020',
+                        lightgold: '#F5E8C7',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .burgundy-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .burgundy-btn:hover {
+            background-color: #600018;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
-<body>
-  <header class="main-header">
-    <div class="container">
-      <h1>Un seul contact, tous vos services</h1>
-      <p class="cta">Gagnez du temps. On s’occupe du reste.</p>
-    </div>
-  </header>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold">
+                        <span class="text-burgundy">Groupe</span> 
+                        <span class="text-gold">[Nom]</span>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#mission" class="hover:text-gold transition">Notre mission</a>
+                    <a href="#services" class="hover:text-gold transition">Services</a>
+                    <a href="#zone" class="hover:text-gold transition">Zone d'intervention</a>
+                    <a href="#contact" class="hover:text-gold transition">Contact</a>
+                </nav>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl text-burgundy"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-  <main>
-    <section class="about-section container">
-      <h2>Groupe [Nom à compléter]</h2>
-      <p>
-        Nous facilitons la vie des entreprises à Annecy et sa région. Un seul interlocuteur, pour tous vos besoins du quotidien : nettoyage, entretien, maintenance, petits travaux, services aux salariés, logistique légère, prestations ponctuelles ou récurrentes. Fini la recherche de multiples prestataires, nous sommes votre partenaire de confiance.
-      </p>
+    <!-- Hero Section -->
+    <section class="hero-section py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                <span class="text-burgundy">Un seul contact.</span> 
+                <span class="text-gold">Tous vos services.</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+                Votre partenaire unique pour simplifier le quotidien de votre entreprise
+            </p>
+            <a href="#contact" class="bg-burgundy text-white px-8 py-3 rounded-full burgundy-btn inline-block">
+                 Être rappelé
+            </a>
+        </div>
     </section>
 
-    <section class="services-section container">
-      <h2>Nos services</h2>
-      <div class="services-grid">
-        <div class="service-block">Nettoyage</div>
-        <div class="service-block">Entretien</div>
-        <div class="service-block">Maintenance</div>
-        <div class="service-block">Petits travaux</div>
-        <div class="service-block">Services aux salariés</div>
-        <div class="service-block">Logistique légère</div>
-        <div class="service-block">Prestations ponctuelles ou récurrentes</div>
-      </div>
+    <!-- Mission Section -->
+    <section id="mission" class="py-20 bg-lightgold">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6 text-burgundy">Notre mission</h2>
+                <p class="text-lg mb-8">
+                    Chez Groupe [Nom], nous croyons que les petites entreprises méritent la même qualité de service que les grandes, sans la complexité. 
+                    Notre mission est de simplifier votre quotidien en coordonnant tous les prestataires nécessaires à votre activité, 
+                    vous permettant ainsi de vous concentrer sur l'essentiel : développer votre entreprise.
+                </p>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+        </div>
     </section>
 
-    <section class="zone-section container">
-      <h2>Zone d’intervention</h2>
-      <p>
-        Annecy et sa région
-      </p>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center text-burgundy">Nos services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
+                    <div class="text-4xl text-gold mb-4">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-burgundy">Nettoyage</h3>
+                    <p class="text-gray-600">
+                        Services de nettoyage réguliers ou ponctuels pour maintenir vos locaux professionnels impeccables.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
+                    <div class="text-4xl text-gold mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-burgundy">Petits travaux</h3>
+                    <p class="text-gray-600">
+                        Réparation, installation et aménagement de vos espaces de travail par des professionnels qualifiés.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
+                    <div class="text-4xl text-gold mb-4">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-burgundy">Maintenance</h3>
+                    <p class="text-gray-600">
+                        Maintenance préventive et corrective pour tous vos équipements et installations techniques.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
+                    <div class="text-4xl text-gold mb-4">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-burgundy">Logistique légère</h3>
+                    <p class="text-gray-600">
+                        Solutions de transport, livraison et gestion des stocks adaptées aux besoins des petites entreprises.
+                    </p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
+                    <div class="text-4xl text-gold mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-burgundy">Services aux salariés</h3>
+                    <p class="text-gray-600">
+                        Prestations pour améliorer le bien-être de vos équipes : restauration, conciergerie, etc.
+                    </p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md border-t-4 border-gold transition duration-300">
+                    <div class="text-4xl text-gold mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-burgundy">Prestations ponctuelles</h3>
+                    <p class="text-gray-600">
+                        Besoin spécifique ? Nous trouvons le bon prestataire pour répondre à votre demande particulière.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="contact-section container">
-      <h2>Contactez-nous</h2>
-      <form class="contact-form" id="contactForm">
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="need">Votre besoin</label>
-        <input type="text" id="need" name="need" required>
-
-        <label for="phone">Téléphone</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <button type="submit" class="accent-btn">Être rappelé</button>
-      </form>
-      <div class="confirmation" id="confirmation">
-        Merci ! Nous vous rappellerons très vite.
-      </div>
+    <!-- Zone Section -->
+    <section id="zone" class="py-20 bg-lightgold">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6 text-burgundy">Zone d'intervention</h2>
+                <p class="text-lg mb-8">
+                    Nous intervenons principalement sur Annecy et sa région, avec une parfaite connaissance du territoire 
+                    et un réseau de prestataires locaux de confiance.
+                </p>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <div class="flex justify-center">
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=Annecy,France&zoom=11&size=600x300&maptype=roadmap&markers=color:red%7CAnnecy,France&key=YOUR_API_KEY" 
+                         alt="Carte d'Annecy" class="rounded-lg shadow-lg border-4 border-white">
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <small>&copy; 2025 Groupe [Nom à compléter] – Contractant général, Annecy</small>
-    </div>
-  </footer>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="w-full p-8">
+                        <h2 class="text-3xl font-bold mb-6 text-center text-burgundy">Contactez-nous</h2>
+                        <p class="text-center mb-8 text-gray-600">
+                            Un seul numéro pour tous vos besoins. Nous vous rappelons sous 24h.
+                        </p>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Votre nom</label>
+                                <input type="text" id="name" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700">Votre téléphone</label>
+                                <input type="tel" id="phone" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
+                            </div>
+                            <div>
+                                <label for="need" class="block text-sm font-medium text-gray-700">Votre besoin</label>
+                                <select id="need" class="mt-1 block w-full border-b border-gray-300 focus:border-burgundy focus:ring-burgundy rounded-none py-2 px-1 bg-transparent">
+                                    <option>Sélectionnez un service</option>
+                                    <option>Nettoyage</option>
+                                    <option>Petits travaux</option>
+                                    <option>Maintenance</option>
+                                    <option>Logistique légère</option>
+                                    <option>Services aux salariés</option>
+                                    <option>Prestation ponctuelle</option>
+                                    <option>Autre demande</option>
+                                </select>
+                            </div>
+                            <div class="pt-4">
+                                <button type="submit" class="w-full bg-burgundy text-white py-3 px-4 rounded-full burgundy-btn">
+                                     Être rappelé
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    // Animation d’apparition sur les blocs services
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.service-block').forEach((el, i) => {
-        el.style.opacity = 0;
-        setTimeout(() => {
-          el.style.transition = 'opacity .7s';
-          el.style.opacity = 1;
-        }, 200 + i * 100);
-      });
-    });
+    <!-- Footer -->
+    <footer class="bg-burgundy text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold">
+                        <span class="text-white">Groupe</span> 
+                        <span class="text-gold">[Nom]</span>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-300">
+                        Un seul contact. Tous vos services.
+                    </p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-sm text-gray-300 mb-2">
+                        <i class="fas fa-phone-alt mr-2"></i> 04 50 00 00 00
+                    </p>
+                    <p class="text-sm text-gray-300 mb-2">
+                        <i class="fas fa-envelope mr-2"></i> contact@groupe-nom.fr
+                    </p>
+                    <p class="text-xs text-gray-400 mt-4">
+                        &copy; 2023 Groupe [Nom]. Tous droits réservés.
+                    </p>
+                    <p class="text-xs text-gray-400 mt-1">
+                        <a href="#" class="hover:text-gold">Mentions légales</a> | 
+                        <a href="#" class="hover:text-gold">Politique de confidentialité</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    // Formulaire de contact – message de confirmation
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('confirmation').style.display = 'block';
-      this.reset();
-      setTimeout(() => {
-        document.getElementById('confirmation').style.display = 'none';
-      }, 4000);
-    });
-  </script>
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            const nav = document.querySelector('nav.hidden.md\\:flex');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('right-6');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('rounded-lg');
+            nav.classList.toggle('shadow-lg');
+            nav.classList.toggle('space-y-4');
+            nav.classList.toggle('space-x-8');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const nav = document.querySelector('nav.flex');
+                if (nav && nav.classList.contains('md:hidden')) {
+                    nav.classList.add('hidden');
+                    nav.classList.remove('flex');
+                }
+            });
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci pour votre demande. Nous vous rappellerons dans les plus brefs délais.');
+                form.reset();
+            });
+        }
+    </script>
 </body>
 </html>
