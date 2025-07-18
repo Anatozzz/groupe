@@ -1,208 +1,224 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Groupe [Nom] – Un seul contact, tous vos services</title>
-  <meta name="description" content="Nettoyage, entretien, maintenance, petits travaux, logistique légère et services aux salariés – à Annecy et région. Un seul contact pour tout.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groupe [Nom] – Contractant général à Annecy</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #f8f9fa;
-      --white: #fff;
-      --text: #333;
-      --accent: #0077cc;
-      --accent-hover: #005fa3;
-      --radius: 8px;
-      --transition: 0.3s ease;
+      --blanc: #fff;
+      --gris-clair: #f7f7f7;
+      --doré: #CBA135;
+      --doré-foncé: #A88C2E;
+      --texte: #333;
     }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      background: var(--blanc);
+      color: var(--texte);
+      margin: 0;
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     }
-    header {
-      background: var(--white);
-      text-align: center;
-      padding: 120px 20px;
-    }
-    header h1 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      margin-bottom: 20px;
-    }
-    header .cta {
-      font-size: 1.25rem;
-      color: var(--accent);
-      margin-bottom: 30px;
-    }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      padding: 14px 30px;
-      border-radius: var(--radius);
-      font-size: 1.1rem;
-      transition: background var(--transition);
-    }
-    .btn:hover { background: var(--accent-hover); }
-
-    section {
-      padding: 60px 20px;
-      background: var(--white);
-      margin: 20px auto;
-      max-width: 900px;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 30px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 24px;
-    }
-    .service {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 24px;
-      border-radius: var(--radius);
-      text-align: center;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .service:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    }
-    .service .icon {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
-      color: var(--accent);
-    }
-    .form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
+    .container {
+      width: 100%;
+      max-width: 700px;
       margin: 0 auto;
+      padding: 1.5rem;
     }
-    .form label {
-      margin-top: 20px;
+    .main-header {
+      background: var(--blanc);
+      border-bottom: 2px solid var(--doré);
+      text-align: center;
+      padding: 3rem 0 2rem 0;
+    }
+    .main-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--doré-foncé);
+    }
+    .cta {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      color: var(--doré);
       font-weight: 600;
     }
-    .form input {
-      padding: 12px;
-      margin-top: 8px;
-      border: 1px solid #ccc;
-      border-radius: var(--radius);
-      font-size: 1rem;
+    h2 {
+      color: var(--doré-foncé);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
     }
-    .form input:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 6px rgba(0,119,204,0.3);
+    .about-section, .services-section, .zone-section, .contact-section {
+      margin-top: 2rem;
     }
-    .form-confirm {
-      display: none;
-      color: green;
-      margin-top: 20px;
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .service-block {
+      background: var(--gris-clair);
+      border: 1px solid var(--doré);
+      border-radius: 8px;
+      padding: 1rem;
       text-align: center;
+      font-weight: 500;
+      color: var(--texte);
+      box-shadow: 0 2px 8px rgba(200, 161, 53, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-block:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 6px 18px rgba(200,161,53,0.14);
+      background: var(--blanc);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .contact-form label {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      color: var(--doré-foncé);
+    }
+    .contact-form input {
+      padding: 0.7rem;
+      border: 1px solid var(--doré);
+      border-radius: 5px;
+      font-size: 1rem;
+      background: var(--blanc);
+    }
+    .accent-btn {
+      padding: 0.8rem;
+      background: var(--doré);
+      color: var(--blanc);
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .accent-btn:hover,
+    .accent-btn:focus {
+      background: var(--doré-foncé);
+    }
+    .confirmation {
+      background: var(--doré);
+      color: var(--blanc);
+      border-radius: 5px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 1.2rem;
+      display: none;
+      font-weight: 600;
+      animation: fadein .7s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     footer {
+      margin-top: 3rem;
+      background: var(--blanc);
+      border-top: 1px solid var(--doré);
       text-align: center;
-      padding: 40px 0;
-      font-size: 0.9rem;
-      color: #666;
+      padding: 1rem 0;
+      color: var(--doré-foncé);
+      font-size: 0.95rem;
     }
-
-    @media(max-width:600px) {
-      header { padding: 80px 20px; }
-      header h1 { font-size: 2rem; }
+    @media (max-width: 600px) {
+      html { font-size: 16px; }
+      .container { padding: 1rem; }
+      .services-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+      .main-header h1 { font-size: 1.4rem; }
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Un seul contact,<br>tous vos services</h1>
-    <p class="cta">Gagnez du temps. On s’occupe du reste.</p>
-    <a href="#contact" class="btn">Je souhaite être rappelé</a>
+  <header class="main-header">
+    <div class="container">
+      <h1>Un seul contact, tous vos services</h1>
+      <p class="cta">Gagnez du temps. On s’occupe du reste.</p>
+    </div>
   </header>
 
-  <section id="about">
-    <h2 class="section-title">Qui sommes-nous ?</h2>
-    <p>
-      Groupe [Nom] aide les entreprises, indépendants, TPE/PME à simplifier leur quotidien avec un seul interlocuteur pour tous leurs services de terrain : nettoyage, entretien, maintenance, petits travaux, logistique, services aux salariés. Interventions ponctuelles ou régulières – avec fiabilité, clarté et professionnalisme.
-    </p>
-  </section>
+  <main>
+    <section class="about-section container">
+      <h2>Groupe [Nom à compléter]</h2>
+      <p>
+        Nous facilitons la vie des entreprises à Annecy et sa région. Un seul interlocuteur, pour tous vos besoins du quotidien : nettoyage, entretien, maintenance, petits travaux, services aux salariés, logistique légère, prestations ponctuelles ou récurrentes. Fini la recherche de multiples prestataires, nous sommes votre partenaire de confiance.
+      </p>
+    </section>
 
-  <section id="services">
-    <h2 class="section-title">Nos services</h2>
-    <div class="services">
-      <div class="service">
-        <div class="icon">🧹</div>
-        <h3>Nettoyage & Entretien</h3>
-        <p>Locaux professionnels propres, régulièrement ou sur demande.</p>
+    <section class="services-section container">
+      <h2>Nos services</h2>
+      <div class="services-grid">
+        <div class="service-block">Nettoyage</div>
+        <div class="service-block">Entretien</div>
+        <div class="service-block">Maintenance</div>
+        <div class="service-block">Petits travaux</div>
+        <div class="service-block">Services aux salariés</div>
+        <div class="service-block">Logistique légère</div>
+        <div class="service-block">Prestations ponctuelles ou récurrentes</div>
       </div>
-      <div class="service">
-        <div class="icon">🔧</div>
-        <h3>Maintenance & Petits travaux</h3>
-        <p>Réparations courantes, maintenance de proximité, sur site.</p>
-      </div>
-      <div class="service">
-        <div class="icon">👥</div>
-        <h3>Services aux salariés</h3>
-        <p>Assistance interne, logistique RH, accueil ou tâches variées.</p>
-      </div>
-      <div class="service">
-        <div class="icon">🚚</div>
-        <h3>Logistique légère</h3>
-        <p>Manutention, transport et missions de logistique simple.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="region">
-    <h2 class="section-title">Zone d’intervention</h2>
-    <p>
-      Basé à Annecy, nous intervenons dans toute la région annécienne : Rumilly, Sevrier, Veyrier, Cran-Gevrier, Poisy, etc.
-    </p>
-  </section>
+    <section class="zone-section container">
+      <h2>Zone d’intervention</h2>
+      <p>
+        Annecy et sa région
+      </p>
+    </section>
 
-  <section id="contact">
-    <h2 class="section-title">Contact rapide</h2>
-    <form id="quick-contact-form" class="form">
-      <label for="name">Nom</label>
-      <input type="text" id="name" required />
-      <label for="need">Votre besoin</label>
-      <input type="text" id="need" required />
-      <label for="phone">Téléphone</label>
-      <input type="tel" id="phone" required />
-      <button type="submit" class="btn" style="margin-top:20px;">Être rappelé</button>
-      <p id="form-confirm" class="form-confirm">Merci, nous vous recontactons très vite.</p>
-    </form>
-  </section>
+    <section class="contact-section container">
+      <h2>Contactez-nous</h2>
+      <form class="contact-form" id="contactForm">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="need">Votre besoin</label>
+        <input type="text" id="need" name="need" required>
+
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <button type="submit" class="accent-btn">Être rappelé</button>
+      </form>
+      <div class="confirmation" id="confirmation">
+        Merci ! Nous vous rappellerons très vite.
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Groupe [Nom] – Votre partenaire de confiance à Annecy</p>
+    <div class="container">
+      <small>&copy; 2025 Groupe [Nom à compléter] – Contractant général, Annecy</small>
+    </div>
   </footer>
 
   <script>
-    const form = document.getElementById('quick-contact-form');
-    const confirm = document.getElementById('form-confirm');
-    form.addEventListener('submit', function(e) {
+    // Animation d’apparition sur les blocs services
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.service-block').forEach((el, i) => {
+        el.style.opacity = 0;
+        setTimeout(() => {
+          el.style.transition = 'opacity .7s';
+          el.style.opacity = 1;
+        }, 200 + i * 100);
+      });
+    });
+
+    // Formulaire de contact – message de confirmation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      confirm.style.display = 'block';
+      document.getElementById('confirmation').style.display = 'block';
+      this.reset();
       setTimeout(() => {
-        confirm.style.display = 'none';
-        form.reset();
-      }, 3000);
+        document.getElementById('confirmation').style.display = 'none';
+      }, 4000);
     });
   </script>
-
 </body>
 </html>
